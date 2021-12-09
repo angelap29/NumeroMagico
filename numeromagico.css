@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family:cursive;  
+ }
+ body{
+    background-image: url(fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+.contenedor__todo{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+.caja{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    border-radius: 40px;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(235, 23, 23, 0.658);
+}
+.caja div p,
+.caja div input,
+.caja div button{
+    margin-top: 40px;
+    justify-content: center;
+}
+.caja div h1
+.caja div h2{
+    font-weight: 400;
+    font-size: 26px;
+    color: black;
+    text-align: center;
+
+}
+#Texto{
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.caja button{
+    padding: 10px 40px;
+    border: 2px solid black;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: black;
+    outline: none;
+    transition: all 300ms;
+}
+.caja button:hover{
+    background: white;
+    color: black;
+}
+.caja input{
+    padding: 10px 40px;
+    border: 2px solid black;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: black;
+    outline: none;
+    transition: all 300ms;
+}
+span {
+    margin-top: auto;
+    color: white;
+    padding: 700px;
+    font-size: 18px;
+}
+
+.glitch {
+  color: rgb(223, 191, 191);
+  position: relative;
+  font-size: 120px;
+  animation: glitch 5s 5s infinite;
+}
+
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: -5px 0 magenta;
+  background: transparent;
+  overflow: hidden;
+  top: 0;
+  animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+}
+
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -5px 0 lightgreen;
+  background:transparent;
+  overflow: hidden;
+  top: 0;
+  animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+}
+
+@keyframes glitch {
+  1%{
+    transform: rotateX(10deg) skewX(90deg);
+  }
+  2%{
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
+
+@keyframes noise-1 {
+  $steps: 30;
+  @for $i from 1 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+    }
+  }
+}
+
+@keyframes noise-2 {
+  $steps: 30;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+    }
+  }
+}
+
+.scanlines {
+  overflow: hidden;
+  mix-blend-mode: difference;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) .5%,
+    transparent 1%
+  );
+
+  animation: fudge 7s ease-in-out alternate infinite;
+}
+
+
+@keyframes fudge {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(0px, 2%);
+  }
+}
+
+.glow {
+  @extend .glitch;
+  text-shadow: 0 0 1000px rgb(223, 191, 191);
+  color: transparent;
+  position: absolute;
+  top: 0;
+}
+
+.subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: .8vw;
+  color: transparent
+  text-transform: uppercase;
+  letter-spacing: 1em;
+  text-align: center;
+  position: absolute;
+  left: 17%;
+  animation: glitch-2 5s 5.02s infinite;
+}
+
+@keyframes glitch-2 {
+  1%{
+    transform: rotateX(10deg) skewX(70deg);
+  }
+  2%{
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
+
+#Tiempo {
+  font-size: 1.6rem;
+}
+.swal{
+  width: 100px ;
+}
+
+
